@@ -4,6 +4,9 @@ allowBuilds:
   esbuild: true
   lefthook: true
   protobufjs: true
+# Our own packages are trusted, so a release is usable the minute it is published instead of after the
+# 1-day minimumReleaseAge window. Everything else stays gated.
 minimumReleaseAgeExclude:
-  - '@ckirg/corelib-markets@0.3.2'
-  - '@ckirg/corelib@0.3.2'
+  - "@ckirg/corelib"
+  - "@ckirg/corelib-markets"
+  - "@ckirg/corelib-cloud"
