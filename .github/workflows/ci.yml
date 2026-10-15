@@ -19,11 +19,31 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
+      # src/quotes.ts imports ../../corelib/ts-markets/dist, so corelib must sit next to fdata.
       - uses: actions/checkout@v7
+        with:
+          path: fdata
+      - uses: actions/checkout@v7
+        with:
+          repository: ckir/corelib
+          path: corelib
       - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: fdata/package.json
       - uses: actions/setup-node@v7
         with:
-          node-version-file: .nvmrc
+          node-version-file: fdata/.nvmrc
           cache: pnpm
+          cache-dependency-path: |
+            fdata/pnpm-lock.yaml
+            corelib/pnpm-lock.yaml
+      - name: Build corelib ts-markets
+        working-directory: corelib
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm --filter ./ts-core build
+          pnpm --filter ./ts-markets build
       - run: pnpm install --frozen-lockfile
+        working-directory: fdata
       - run: pnpm verify
+        working-directory: fdata
