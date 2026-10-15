@@ -1,0 +1,20 @@
+[
+	{
+		"name": "node",
+		"why": "Runtime and scripts; Node >=24 (see .nvmrc).",
+		"install": "nvm install (reads .nvmrc), or https://nodejs.org",
+		"in_path": "node"
+	},
+	{
+		"name": "pnpm",
+		"why": "The package manager; version pinned in package.json packageManager.",
+		"install": "corepack enable && corepack prepare pnpm@11.5.2 --activate",
+		"in_path": "pnpm"
+	},
+	{
+		"name": "gh",
+		"why": "Repository and CI management (repo create, run view).",
+		"install": "https://cli.github.com",
+		"in_path": "gh"
+	}
+]

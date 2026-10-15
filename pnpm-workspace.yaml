@@ -1,0 +1,9 @@
+# pnpm 11 blocks dependency build/postinstall scripts unless listed here.
+allowBuilds:
+  "@ckirg/corelib": true # postinstall downloads the prebuilt native module from the GitHub Release
+  esbuild: true
+  lefthook: true
+  protobufjs: true
+minimumReleaseAgeExclude:
+  - '@ckirg/corelib-markets@0.3.2'
+  - '@ckirg/corelib@0.3.2'

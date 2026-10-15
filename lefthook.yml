@@ -1,0 +1,8 @@
+pre-commit:
+  commands:
+    lint:
+      run: pnpm lint:ci
+pre-push:
+  commands:
+    verify:
+      run: pnpm verify
