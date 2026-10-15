@@ -1,4 +1,7 @@
-import { ApiNasdaqQuotes, type NasdaqResult } from "@ckirg/corelib-markets";
+import {
+	ApiNasdaqQuotes,
+	type NasdaqResult,
+} from "../../corelib/ts-markets/dist/index.js";
 
 /** The slice of ApiNasdaqQuotes this app uses, so tests can substitute a fake. */
 export interface QuoteClient {
