@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"private": true,
 	"type": "module",
-	"packageManager": "pnpm@11.5.2",
+	"packageManager": "pnpm@12.8.1",
 	"engines": {
 		"node": ">=24"
 	},
@@ -30,10 +30,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.15",
-		"@types/node": "^25.9.2",
+		"@types/node": "^26.6.5",
 		"lefthook": "^2.2.2",
 		"tsx": "^4.23.15",
-		"typescript": "^6.0.3",
-		"vitest": "^4.1.11"
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.4"
 	}
 }
